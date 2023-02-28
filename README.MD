@@ -1,6 +1,6 @@
 # Aprendendo Sass
 
-Este repositório foi criado para ensinar os fundamentos do Sass, um pré-processador CSS que permite escrever código CSS mais rápido e eficiente. O Sass é um dos pré-processadores CSS mais populares e é amplamente utilizado em projetos web.
+Este repositório foi criado para ensinar os fundamentos básicos do Sass, um pré-processador CSS que permite escrever código CSS mais rápido e eficiente. O Sass é um dos pré-processadores CSS mais populares e é amplamente utilizado em projetos web.
 
 ## O que é Sass?
 

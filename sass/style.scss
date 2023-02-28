@@ -1,0 +1,116 @@
+.quadrado{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+
+//Utilizando variáveis do SASS
+$btn-color: #ff4043;
+$btn-color-hover: #ff0000;
+$btn-color-active: #ff0000;
+
+.btn1{
+    width: 60px;
+    background-color: $btn-color;
+}
+.btn2{
+    width: 70px;
+    background-color: $btn-color;
+}
+
+.btn1:hover{
+    background-color: $btn-color-hover;
+}
+.btn2:hover{
+    background-color: $btn-color-hover;
+}
+//Utilizando o Nesting
+.classe1 {
+    ul{
+        list-style: none;
+        li{
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+}
+
+/*.container {
+    & .btn {
+      estilos 
+    }
+    &:hover{
+         estilos 
+    }
+    &:active{
+        estilos 
+    }
+}
+*/
+
+//Utilizando o Import
+@import "colors/colors.scss";
+@import "pages/home.scss";
+
+//Utilizando o Mixin
+@mixin btn($width, $height, $color, $color-hover, $color-active){
+    width: $width;
+    height: $height;
+    background-color: $color;
+    &:hover{
+        background-color: $color-hover;
+    }
+    &:active{
+        background-color: $color-active;
+    }
+}
+
+.btn1{
+    @include btn(60px, 30px, $btn-color, $btn-color-hover, $btn-color-active);
+}
+
+//Utilizando funções do SASS
+@function nome-da-funcao($argumento1, $argumento2, ...) {
+    // corpo da função
+    @return valor;
+}
+
+//Exemplo de função
+
+// Criando uma função que retorna a soma de dois números
+@function soma($num1, $num2) {
+    @return $num1 + $num2;
+  }
+  
+  // Usando a função "soma" para calcular a largura de uma div
+  div {
+    width: soma(100px, 50px);
+  }
+  
+  // Usando a função "lighten" para clarear uma cor em 20%
+  h1 {
+    color: lighten(#000000, 20%);
+  }
+  
+  // Usando a função "if" para aplicar diferentes estilos a um botão com base em sua classe
+  .btn {
+    @if &.primary {
+      background-color: blue;
+      color: white;
+    } @else if &.secondary {
+      background-color: gray;
+      color: black;
+    } @else {
+      background-color: white;
+      color: black;
+    }
+  }
+  
+  // Usando a função "for" para gerar uma série de estilos de cabeçalho com base em seus níveis
+  @for $i from 1 through 6 {
+    h#{$i} {
+      font-size: $i * 10px;
+    }
+  }
